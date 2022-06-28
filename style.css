@@ -40,7 +40,7 @@ h1 {
 	border-radius: 25px;
 	padding: 25px 35px;
 	box-shadow: 0 20px 20px 0 rgba(15, 146, 166, 0.8);
-	color: #fff;
+	color: rgb(188, 146, 166);
 	display: flex;
 	position: relative;
 	margin: 100px 0;
@@ -112,10 +112,82 @@ h1 {
 
 .action-btn {
 	background-color: #fff;
-	border: none;
+	border: 0;
 	font-size: 1.5em;
 	cursor: pointer;
     padding: 10px;
     margin: 0 20px;
+    border-radius: 12px;
+    padding: 0.5rem;
+    transition: 0.5s;
   
 }
+
+.action-btn:hover {
+	background-color: rgba(188, 146, 166, 0.2);
+	border: 0;
+	font-size: 1.5em;
+	cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+    border-radius: 12px;
+    padding: 0.5rem;
+  
+}
+
+
+.music-container:hover .action-btn {
+	background-color: #000;
+	color: rgb(188, 146, 166);
+	transition: 0.5s;
+}
+
+
+
+
+.action-btn-big {
+	background-color:  rgb(188, 146, 166);
+	border: 0;
+	font-size: 2em;
+	cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+    border-radius: 12px;
+    padding: 0.5rem;
+    transition: 0.5s;
+    color: rgba(0,0,0,0.8);
+  
+}
+
+.music-info {
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 15px 15px 0 0 ;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: calc(100% - 40px);
+	opacity: 0 ;
+	transform: translateY(0%);
+}
+.music-container.play .music-info {
+	opacity: 1;
+	transform: translateY(-100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
