@@ -193,10 +193,10 @@ h1 {
 }
 
 .progress { /* Progress bar for the duration of the song like an actual song player*/
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,100,0.7);
 	border-radius: 5px;
 	height: 100%;
-	width: 0%;
+	width: 10%;
 	transition: width 0.1s linear
 }
 

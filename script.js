@@ -67,6 +67,11 @@ loadSong(songs[songIndex])
 	playSong()
  }
 
+function updateProgress(e) {
+ const {duration, currentTime} = e.srcElement
+ const progressPercent = (currentTime / duration) * 100
+ progress.style.width = `${progressPercent}%`
+}
 
  //Event Handlers
  playBtn.addEventListener("click", ()=> {
@@ -86,3 +91,5 @@ loadSong(songs[songIndex])
 
 prevBtn.addEventListener("click", prevSong)
 nextBtn.addEventListener("click", nextSong)
+
+audio.addEventListener('timeupdate' , updateProgress)
