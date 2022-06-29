@@ -1,7 +1,8 @@
+
 const musicContainer = document.querySelector('.music-container')
 const playBtn = document.querySelector('#play')
-const prev = document.querySelector('#prev')
-const next = document.querySelector('#next')
+const prevBtn = document.querySelector('#prev')
+const nextBtn = document.querySelector('#next')
 const audio = document.querySelector('#audio')
 const progress = document.querySelector('.progress')
 const progressContainer = document.querySelector('.progress-container')
@@ -14,7 +15,7 @@ const songs = ["Nikes" , "Ivy" , "Pink + White", "Be Yourself", "Solo", "Skyline
 console.log(songs)                                    
 
 //Song Index
-let songIndex = 3
+let songIndex = 12
 
 //Initially Load Song into DOM
 loadSong(songs[songIndex])
@@ -40,11 +41,32 @@ loadSong(songs[songIndex])
 
  function pauseSong() {
  	musicContainer.classList.remove('play')
- 	playBtn.querySelector("i.fas").classList.remove('fa-pause')
  	playBtn.querySelector("i.fas").classList.add('fa-play')
+ 	playBtn.querySelector("i.fas").classList.remove('fa-remove')
 
  	audio.pause()
+}
+
+ function prevSong() {
+ 	songIndex-- // Goes to the previous song by decreasing the songIndex
+ 	if(songIndex < 0) {
+ 		songIndex= songs.length - 1
+ 	} //this loops the song list when it reaches the first song
+ 	loadSong(songs[songIndex]) //loads the song
+ 	playSong() //plays the previous song
  }
+
+
+ function nextSong() {
+ 	songIndex++
+ 	if(songIndex > songs.length - 1) {
+ 		songIndex = 0
+ 	}
+
+ 	loadSong(songs[songIndex])
+	playSong()
+ }
+
 
  //Event Handlers
  playBtn.addEventListener("click", ()=> {
@@ -61,3 +83,6 @@ loadSong(songs[songIndex])
 
 
  //Change Song Events
+
+prevBtn.addEventListener("click", prevSong)
+nextBtn.addEventListener("click", nextSong)

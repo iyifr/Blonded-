@@ -170,7 +170,7 @@ h1 {
 	opacity: 0 ;
 	transform: translateY(0%);
 	padding: 10px 10px 10px 150px;
-	transition: transform 0.3s ease-in opacity 0.3s ease-in; /*trnasition to make the music info bar slide up when the play buttin is clicked*/
+	 /*trnasition to make the music info bar slide up when the play buttin is clicked*/
 	font-size: 1.2rem;
 	font-weight: bold;
 }
@@ -179,6 +179,7 @@ h1 {
 .music-container.play .music-info {
 	opacity: 1;
 	transform: translateY(-100%);
+	transition: 0.4s;
 }
 
 .progress-container {
